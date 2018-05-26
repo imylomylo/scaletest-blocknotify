@@ -15,11 +15,11 @@ stack: scaletest-blocknotify-v0
 api keys:
   None
 endpoints:
-  POST - https://XXXXXX.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify
-  GET - https://XXXXXX.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify
-  GET - https://XXXXXX.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify/{id}
-  PUT - https://XXXXXX.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify/{id}
-  DELETE - https://XXXXXX.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify/{id}
+  POST - https://913ra6plrf.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify
+  GET - https://913ra6plrf.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify
+  GET - https://913ra6plrf.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify/{id}
+  PUT - https://913ra6plrf.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify/{id}
+  DELETE - https://913ra6plrf.execute-api.ap-southeast-2.amazonaws.com/v0/blocknotify/{id}
 functions:
   create: scaletest-blocknotify-v0-create
   list: scaletest-blocknotify-v0-list

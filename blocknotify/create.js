@@ -8,19 +8,20 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
-  if ( typeof data.active !== 'boolean' ) {
-    console.error('Validation Failed');
-    callback(new Error('Couldn\'t create the Block.'));
-    return;
-  }
+  // if ( typeof data.active !== 'boolean' ) {
+  //   console.error('Validation Failed');
+  //   callback(new Error('Couldn\'t create the Block.'));
+  //   return;
+  // }
 
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
     Item: {
       id: uuid.v1(),
-      	blockhash: data.blockhash,
-	txcount: data.txcount,
-      	active: data.active,
+      	hash: data.hash,
+        txcount: data.tx.length,
+        size: data.size,
+        height: data.height,
       createdAt: timestamp,
       updatedAt: timestamp,
     },
