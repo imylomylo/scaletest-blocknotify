@@ -6,7 +6,7 @@ RESULT=$(${KOMODOCLI} getblock ${1})
 # This prints blockhash from the `blocknotify=<script> %s` from komodo.conf
 if [ ${DEBUG} -e "TRUE" ]
 then
-    echo $1 > ${LOGDIR}/blocknotify.log
+    echo $1 > ${LOGDIR}/kaveman.log
     RESULT=$(cat sample.txt)
     echo ${RESULT}
 fi
