@@ -1,4 +1,4 @@
-service: scaletest-blocknotify
+service: kmd-blocknotify
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
@@ -82,7 +82,7 @@ resources:
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
 
 plugins:
- - serverless-finch
+  - serverless-finch
   - serverless-aws-documentation
 
 custom:
@@ -91,7 +91,7 @@ custom:
     distributionFolder: client/dist
 
   documentation:
-    version: '1'
+    version: '0'
     summary: 'Block Notify API'
     description: 'A block notfiy API for blockchain utility'
     resources:
