@@ -1,4 +1,4 @@
-service: kmd-blocknotify
+service: kmd-blocknotify-17
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
@@ -90,66 +90,3 @@ custom:
     bucketName: imylomylo-scaletest-2018
     distributionFolder: client/dist
 
-  documentation:
-    version: '0'
-    summary: 'Block Notify API'
-    description: 'A block notfiy API for blockchain utility'
-    resources:
-      -
-        path: "blocknotify"
-        description: "Path used for blocknotify scripts"
-      -
-        path: "blocknotify/{id}"
-        description: "Path used for getting, updating and deleting a blocknotify"
-    models:
-      -
-        name: "blocknotify"
-        description: "a blocknotify object"
-        contentType: "application/json"
-        schema:
-          type: object
-          properties:
-            id:
-              type: string
-              format: uuid
-            height:
-              type: string
-              format: string
-            blockhash:
-              type: string
-              format: string
-            txcount:
-              type: string
-              format: string
-            size:
-              type: string
-              format: string
-            createdAt:
-              type: number
-            updatedAt:
-              type: number
-          required:
-            - id
-            - height
-            - blockhash
-            - txcount
-            - size
-            - createdAt
-            - updatedAt
-      -
-        name: "blocknotifyCreateRequest"
-        description: "a blocknotify create request model"
-        contentType: "application/json"
-        schema:
-          ${self:custom.documentation.models}
-      -
-        name: "awsError"
-        description: "an aws internal server error, usually with status code 502 (bad gateway)"
-        contentType: "application/json"
-        schema:
-          type: object
-          properties:
-            message:
-              type: string
-          required:
-            - message

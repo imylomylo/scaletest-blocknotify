@@ -18,10 +18,11 @@ module.exports.create = (event, context, callback) => {
     TableName: process.env.DYNAMODB_TABLE,
     Item: {
       id: uuid.v1(),
-      	hash: data.hash,
+      	blockhash: data.hash,
         txcount: data.tx.length,
         size: data.size,
         height: data.height,
+        time: data.time,
       createdAt: timestamp,
       updatedAt: timestamp,
     },

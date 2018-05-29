@@ -17,7 +17,7 @@ module.exports.get = (event, context, callback) => {
     // handle potential errors
     if (error) {
       console.error(error);
-      callback(new Error('Couldn\'t fetch the Task.'));
+      callback(new Error('Couldn\'t fetch the Block.'));
       return;
     }
 
