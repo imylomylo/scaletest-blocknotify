@@ -7,6 +7,7 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.create = (event, context, callback) => {
   const timestamp = new Date().getTime();
+  // console.log(event.body)
   const data = JSON.parse(event.body);
   // if ( typeof data.active !== 'boolean' ) {
   //   console.error('Validation Failed');
@@ -18,11 +19,13 @@ module.exports.create = (event, context, callback) => {
     TableName: process.env.DYNAMODB_TABLE,
     Item: {
       id: uuid.v1(),
-      	blockhash: data.hash,
-        txcount: data.tx.length,
+        ac: data.ac,
+        totaltx: data.totaltx,
         size: data.size,
         height: data.height,
         time: data.time,
+        mempoolMB: data.mempoolMB,
+        mempooltx: data.mempooltx,
       createdAt: timestamp,
       updatedAt: timestamp,
     },

@@ -1,8 +1,9 @@
 #!/bin/bash
-source config.txt
+source config.sh
 LOGDIR=${LOGDIR}
 KOMODOCLI=$(which komodo-cli)
-RESULT=$(${KOMODOCLI} getblock ${1})
+#RESULT=$(${KOMODOCLI} getblock ${1})
+RESULT="{ \"size\": 696770, \"height\": 10, \"time\": 1527755479, \"totaltx\": \"3084\", \"ac\": \"TXSCL220\" }"
 # This prints blockhash from the `blocknotify=<script> %s` from komodo.conf
 if [ ${DEBUG} -e "TRUE" ]
 then
