@@ -25,7 +25,8 @@ module.exports.get = (event, context, callback) => {
     const response = {
       statusCode: 200,
       headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "KMD-txblast-activation": "1337"
     },
       body: JSON.stringify(result.Item),
     };
