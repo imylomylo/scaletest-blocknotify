@@ -22,6 +22,15 @@ provider:
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
 functions:
+  activation:
+    handler: blocknotify/activation.activation
+    events:
+      - http:
+          path: blocknotify/activation
+          method: get
+          headers:
+            KMD-txblaster-activation-1337
+
   create:
     handler: blocknotify/create.create
     events:
